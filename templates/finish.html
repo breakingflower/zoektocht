@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h3>Gefeliciteerd! Jullie zijn er geraakt in {{dt}} en zijn daarmee plaats {{rank+1}}! 
+    Je kan <a href="{{url_for('hall_of_fame')}}">hier</a> de andere resultaten bekijken, met afbeeldingen :)
+</h3>
+
+<div> 
+    <figure class="figure">
+        <img src="{{url_for('static', filename='uploads/knooppunt59/'+imname) }}" class="figure-img img-fluid rounded" alt="{{selfie}}">
+        <figcaption>Jullie bijdrage in Knooppunt 59</figcaption> 
+    </figure>
+    <figure class="figure">
+        <img src="{{url_for('static', filename='uploads/knooppunt41/'+imname) }}" class="figure-img img-fluid rounded" alt="{{selfie}}">
+        <figcaption>Gehaald in {{dt}}!</figcaption> 
+    </figure>
+</div>
+{% endblock content %}

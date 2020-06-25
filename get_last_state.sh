@@ -1,0 +1,1 @@
+mkdir last_static_state && scp -i /home/floris/.ssh/aws-eb -rp ec2-user@18.185.9.221:/opt/python/current/app/static last_static_state/  

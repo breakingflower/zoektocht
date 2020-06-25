@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>HALL OF FAME</h1>
+
+{% for (rank, t0, dt, imname) in data_list %}
+<!-- finisher is a four tuple of f'{rank},{t0},{dt},{imname}'--> 
+<h2>Plaats {{rank+1}}: <b>{{dt}}</b>! </h2>
+
+<div>
+    <figure class="figure">
+        <img src="{{url_for('static', filename='uploads/knooppunt59/'+imname) }}" class="figure-img img-fluid rounded" alt="{{selfie}}">
+    </figure>
+</div>
+<div>
+    <figure class="figure">
+        <img src="{{url_for('static', filename='uploads/knooppunt41/'+imname) }}" class="figure-img img-fluid rounded" alt="{{selfie}}">
+    </figure>
+</div>
+
+{% endfor %}
+{% endblock content %}
