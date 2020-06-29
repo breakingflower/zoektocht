@@ -386,10 +386,20 @@ VRAGEN_DICT = {
 for nr, question in enumerate(VRAGEN_DICT):
 
     soup = BeautifulSoup(VRAGEN_DICT[question]['q'], 'html.parser')
-    with open(os.path.join(BASE_DIR, f'{nr}.html'), "w") as f: 
-        f.write(soup.prettify())
 
-    with open(os.path.join(BASE_DIR, 'vragen.txt'), "a") as f: 
-        f.write(f'{nr},{question}\n')
+    ################ WRITE HTML FILES 
+    # with open(os.path.join(BASE_DIR, f'{nr}.html'), "w") as f: 
+    #     f.write(soup.prettify())
 
+    ################ WRITE NR,Q,A
+    answer = VRAGEN_DICT[question]['a']
+    if answer=="":
+        answer="null"
+    with open(os.path.join(BASE_DIR, 'qa.txt'), "a") as f: 
+        if nr!=len(VRAGEN_DICT)-1:
+            f.write(f'{nr},{question},{answer}\n')
+        elif nr==len(VRAGEN_DICT)-1: 
+            f.write(f'{nr},{question},{answer}')
+
+    # with open(os.path.join())
     # embed()
