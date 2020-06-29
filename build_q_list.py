@@ -388,8 +388,8 @@ for nr, question in enumerate(VRAGEN_DICT):
     soup = BeautifulSoup(VRAGEN_DICT[question]['q'], 'html.parser')
 
     ################ WRITE HTML FILES 
-    # with open(os.path.join(BASE_DIR, f'{nr}.html'), "w") as f: 
-    #     f.write(soup.prettify())
+    with open(os.path.join(BASE_DIR, f'{nr}.html'), "w") as f: 
+        f.write(soup.prettify())
 
     ################ WRITE NR,Q,A
     answer = VRAGEN_DICT[question]['a']
